@@ -25,7 +25,7 @@ if today in birthday_dic:
     file_path = f"letter_templates/letter_{random.randint(1, 3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        contents.replace(["NAME"], birthday_person["name"])
+        contents=contents.replace(["NAME"], birthday_person["name"])
 
     with sm.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
